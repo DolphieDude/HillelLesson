@@ -23,13 +23,12 @@ public class Main {
             discount = Double.parseDouble(input.readLine());
             ordersQueue.add(new Order(quantity, name, price, discount));
         }
-        Order doOrder;
-        while(!ordersQueue.isEmpty()) {
-            doOrder = ordersQueue.remove();
-            System.out.println("Order #" + doOrder.getNumber());
-            System.out.println("Send/Do \"" + doOrder.getName() + "\" in quantity of " + doOrder.getQuantity());
-            System.out.println("Need to pay " + (doOrder.getPrice() * doOrder.getQuantity() - doOrder.getDiscount() * doOrder.getQuantity()));
-            System.out.println(doOrder.getDate());
-        }
+//        Order doOrder;
+        while(!ordersQueue.isEmpty()) System.out.println(ordersQueue.remove());
+//            doOrder = ordersQueue.remove();
+//            System.out.println("Order #" + doOrder.getNumber());
+//            System.out.println("Send/Do \"" + doOrder.getName() + "\" in quantity of " + doOrder.getQuantity());
+//            System.out.println("Need to pay " + (doOrder.getPrice() * doOrder.getQuantity() - doOrder.getDiscount() * doOrder.getQuantity()));
+//            System.out.println(doOrder.getDate());
     }
 }

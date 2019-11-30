@@ -24,9 +24,18 @@ public class Order implements Comparable<Order> {
         this.date = new Date();
     }
 
+//    System.out.println("Send/Do \"" + doOrder.getName() + "\" in quantity of " + doOrder.getQuantity());
+//            System.out.println("Need to pay " + (doOrder.getPrice() * doOrder.getQuantity() - doOrder.getDiscount() * doOrder.getQuantity()));
+//            System.out.println(doOrder.getDate());
     //overriden methods
     @Override
     public int compareTo (Order o) { return 0; }
+    public String toString () {
+        return new StringBuilder("Order #").append(this.number).append("\n")
+                .append("Send/Do \"").append(this.name).append("\" in quantity of ").append(this.quantity).append("\n")
+                .append("Need to pay ").append(this.price * this.quantity - this.discount * this.quantity).append("\n")
+                .append(this.date).append("\n").toString();
+    }
 
     //<b>only<//b> getters
     int getNumber () { return number; }
