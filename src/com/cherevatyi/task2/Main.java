@@ -8,9 +8,6 @@ public class Main {
         Queue<String> queue = new PriorityQueue<String>();
         queue.add("AMA FIRST");
         queue.add("second one(");
-        System.out.println(queue.element());
-        System.out.println(queue.peek());
-        System.out.println(queue.offer("AMA FIRST"));
         System.out.println(queue.peek());
         System.out.println(queue.poll());
         System.out.println(queue.peek());
