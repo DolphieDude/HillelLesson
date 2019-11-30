@@ -15,7 +15,7 @@ public class Order implements Comparable<Order> {
 
     //constructors. Default one is <b>private</b>
     private Order() { }
-    Order(Integer quantity, String name, Double price, Double discount) {
+    public Order(Integer quantity, String name, Double price, Double discount) {
         ORDER_COUNT++;
         this.number = ORDER_COUNT;
         this.quantity = quantity;
@@ -30,7 +30,13 @@ public class Order implements Comparable<Order> {
 //            System.out.println(doOrder.getDate());
     //overriden methods
     @Override
-    public int compareTo (Order o) { return 0; }
+    public int compareTo (Order o) {
+        if (this.quantity > o.getQuantity()) return 1;
+        else if (this.quantity < o.getQuantity()) return -1;
+        else return 0;
+//        if (this.quantity >= o.getQuantity()) return this.quantity;
+//        else return o.getQuantity();
+    }
     @Override
     public String toString () {
         return new StringBuilder("Order #").append(this.number).append("\n")
