@@ -1,6 +1,7 @@
 package com.cherevatyi.task3;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Order implements Comparable<Order> {
     //<b>static</b> vars
@@ -30,12 +31,22 @@ public class Order implements Comparable<Order> {
     //overriden methods
     @Override
     public int compareTo (Order o) { return 0; }
+    @Override
     public String toString () {
         return new StringBuilder("Order #").append(this.number).append("\n")
                 .append("Send/Do \"").append(this.name).append("\" in quantity of ").append(this.quantity).append("\n")
                 .append("Need to pay ").append(this.price * this.quantity - this.discount * this.quantity).append("\n")
                 .append(this.date).append("\n").toString();
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return this.number.equals(order.number);
+    }
+    @Override
+    public int hashCode() { return Objects.hash(this.number); }
 
     //<b>only<//b> getters
     int getNumber () { return number; }
