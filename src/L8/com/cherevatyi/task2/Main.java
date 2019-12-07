@@ -9,9 +9,11 @@ public class Main {
         }
         catch (Exception e) {
             System.out.println("HA! Caught");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
-    public static void exceptionThrower () {
+    private static void exceptionThrower () {
         System.out.println("Before 0");
         int nothing = 1 / 0;
         System.out.println("After 0");
