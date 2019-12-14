@@ -6,7 +6,7 @@ public class ClockManager {
         Thread clockThread = new Thread(clock);
         clockThread.start();
         Thread.sleep(10000);
-        clock.cancel();
+        clockThread.interrupt();
         System.out.println(clock.i);
     }
 }
