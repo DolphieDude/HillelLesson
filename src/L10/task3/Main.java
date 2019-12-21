@@ -1,6 +1,7 @@
 package L10.task3;
 
 import java.util.*;
+import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,9 +22,6 @@ public class Main {
 //                return o1.length - o2.length;
 //            }
 //        };
-
-        arrays.forEach(s -> Arrays.asList(s).forEach(ss -> {
-                System.out.println(ss + " " + s);
-            }));
+        arrays.forEach(sarr -> Arrays.asList(sarr).forEach(ss -> System.out.println(ss + " " + sarr)));
     }
 }
