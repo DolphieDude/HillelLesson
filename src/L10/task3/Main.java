@@ -1,8 +1,6 @@
 package L10.task3;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,8 +13,8 @@ public class Main {
         arrays.add(array2);
         arrays.add(array3);
 
-        Comparator<String[]> sortByLength = (o1, o2) -> o1.length - o2.length;
-        arrays.sort(sortByLength);
+//        Comparator<String[]> sortByLength = (o1, o2) -> o1.length - o2.length;
+        arrays.sort((o1, o2) -> o1.length - o2.length);
 //        Comparator<String[]> sortByLength = new Comparator<String[]>() {
 //            @Override
 //            public int compare(String[] o1, String[] o2) {
@@ -24,9 +22,8 @@ public class Main {
 //            }
 //        };
 
-        arrays.forEach(s -> {
-            for (String ss: s) System.out.println(ss);
-            System.out.println();
-        });
+        arrays.forEach(s -> Arrays.asList(s).forEach(ss -> {
+                System.out.println(ss + " " + s);
+            }));
     }
 }
