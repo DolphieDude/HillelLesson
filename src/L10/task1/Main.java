@@ -11,7 +11,7 @@ public class Main {
         int n;
         for (int i = 0; i < 10; i++) {
             n = getVal();
-            assert n > 0;
+            assert n > 0: "N is 0";
             System.out.println(n);
         }
     }
