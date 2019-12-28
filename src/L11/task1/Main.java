@@ -1,7 +1,9 @@
 package L11.task1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -27,6 +29,17 @@ public class Main {
         //Стрим из массива: Arrays.stream(array)
         //Стрим из указанных элементов: Stream.of("1", "2", "3")
 
+        String[] array = {"Java", "Course", "Gradle"};
+        Stream<String> streamOfArray = Arrays.stream(array);
+        List<String> collect = streamOfArray.map(s->s.split(""))
+                .flatMap(Arrays::stream).distinct()
+                .collect(Collectors.toList());
+        collect.forEach(System.out::println);
 
+        Arrays.stream(array).map(s->s.split("")) //Преобразование слова в массив букв
+                .map(Arrays::stream)
+                .distinct() //Сделать массив в отдельный поток
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
     }
 }
