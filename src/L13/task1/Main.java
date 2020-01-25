@@ -13,8 +13,7 @@ public class Main {
         final MyAnnotation annotation = method.getAnnotation(MyAnnotation.class);
         if (Objects.isNull(annotation)) {
             System.out.println("no anno");
-        }
-        else {
+        } else {
             System.out.println("anno");
             System.out.println(annotation.value());
             try {
