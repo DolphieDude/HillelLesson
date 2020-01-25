@@ -10,4 +10,12 @@ public class Counter {
     public static void increment() {
         COUNT++;
     }
+
+    public static void newIncrement() {
+        COUNT+=2;
+    }
+
+    public static void decrement() {
+        COUNT--;
+    }
 }
